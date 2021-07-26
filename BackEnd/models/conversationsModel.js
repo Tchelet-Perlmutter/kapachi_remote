@@ -6,13 +6,8 @@ const conversationSchema = new mongoos.schema({
     required: [true, "A conversation should have conversationalists"],
     unique: true,
   },
-  // messages objects (Embedded)
-  lastTenMessagesObjArr: {
-    type: Array,
-    default: [],
-    },
-  // messages Indexes (By referense)
-  otherMesagesIndexesArr: {
+  // messages Indexes (IDs)
+  mesagesIndexesArr: {
     type: Array,
     defoult: [],
   },

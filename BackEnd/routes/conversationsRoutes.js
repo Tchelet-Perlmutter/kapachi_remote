@@ -3,8 +3,13 @@ const conversationsController = require("../controllers/conversationsController"
 const routersCalling = require("./commonRoutesFunction");
 
 const router = express.Router();
-routerCalling.routers(Conversations, router);
 
-module.exports = router;
+// ??? should I pass the req res as arguments to this function?
+exports.conversationsRoutes = () => {
+    routersCalling(Conversations, router);
+}
+
+
+// module.exports = router;
 
 
