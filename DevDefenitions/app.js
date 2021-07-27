@@ -5,9 +5,9 @@ const app = express();
 // ??? Should i require mongodb too?
 
 //requiring the routes files
-const conversationsRoutes = require("./../routes/conversationsRoutes");
-const messagesRoutes = require("./../routes/messagesRoutes");
-const usersRoutes = require("./../routes/usersRoutes");
+const conversationsRouter = require("./../routes/conversationsRoutes");
+const messagesRouter = require("./../routes/messagesRoutes");
+const usersRouter = require("./../routes/usersRoutes");
 
 // Middlewear that convert the request in to Jason
 app.use(express.jason());
@@ -19,13 +19,13 @@ app.get("kapachi/v1/:collection", (req, res, next) => {
     // ??? Inside the .use function I need to put an argument which is a function? or a router? What happens if I put a router?
     switch (collection) {
         case "messages":
-            app.use(messagesRoutes);
+            app.use(messagesRouter);
             break;
         case "users":
-            app.use(usersRoutes);
+            app.use(usersRouter);
             break;
         case "conversations":
-            app.use(conversationsRoutes);
+            app.use(conversationsRouter);
             break;
         default:
             res.status(400).json({

@@ -1,6 +1,7 @@
 // ??? Do I need to require the schemas documents in order to use the Model param (collectionName)?
 
-function addIndexToArray(collectionName, document) {
+// FIXME:
+function addIndexToArray(collectionName, document) { 
   if (method == "create(req.body)") {
     if (collectionName == "Conversations") {
     } else if (collectionName == "Messages") {

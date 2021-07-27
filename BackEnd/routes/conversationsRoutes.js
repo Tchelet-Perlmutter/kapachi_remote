@@ -1,15 +1,11 @@
 const express = require("express");
 const conversationsController = require("../controllers/conversationsController");
-const routersCalling = require("./commonRoutesFunction");
+const commonRoutes = require("./commonRoutesFunction");
 
 const router = express.Router();
 
-// ??? should I pass the req res as arguments to this function?
-exports.conversationsRoutes = () => {
-    routersCalling(Conversations, router);
-}
+router.use(commonRoutes);
 
-
-// module.exports = router;
+module.exports = router;
 
 

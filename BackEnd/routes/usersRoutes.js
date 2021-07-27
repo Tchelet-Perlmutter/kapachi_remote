@@ -1,13 +1,9 @@
 const express = require("express");
 const usersController = require("./../controllers/users");
+const commonRourtes = requre("./commonRoutesFunction")
 
 const router = express.Router();
 
-// ??? Why should I create a seperate router to every collection?
-const router = express.Router();
+router.use(commonRoutes);
 
-exports.messagesRouters = () => {
-    routerCalling(Users, router);
-}
-
-// module.exports = router;
+module.exports = router;

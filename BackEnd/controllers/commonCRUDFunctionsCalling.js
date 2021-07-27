@@ -1,7 +1,7 @@
 const Conversions = require("./../models/conversionsModel");
-const Messages = require("./../models/messagesModel");
-const Users = require("./../models/usersModel");
-const CRUDTamplates = require("./commonCRUDFunctionsTamplates");
+const Messages = require("../models/messagesModel");
+const Users = require("../models/usersModel");
+const CRUDTamplates = require("./commonCRUDFunctions");
 
 //Get all collection's documents in the db - comes from / route
 exports.getAllDocuments = (collectionName) => {

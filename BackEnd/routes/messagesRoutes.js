@@ -1,12 +1,9 @@
 const express = require("express");
 const messagesController = require("../controllers/messagesController");
-const routersCalling = require("./commonRoutesFunction");
+const commonRoutes = require("./commonRoutesFunction");
 
 const router = express.Router();
 
-exports.messagesRoutes = () => {
-    routersCalling(Messages, router);
-}
+router.use(commonRoutes);
 
-
-// module.exports = router;
+module.exports = router;

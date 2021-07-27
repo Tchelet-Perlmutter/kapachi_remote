@@ -1,7 +1,11 @@
 const express = require("express");
-const CRUDFunctions = require("../controllers/commonFullCRUDFunctions");
+const CRUDFunctions = require("../controllers/commonCRUDFunctionsCalling");
+const router = express.Router();
 
-exports.routers = (collectionName, router) => {
+//Getting the collection name from the URL
+const collectionName = router.param("collection");
+
+routes = (collectionName) => {
   // In patch cases - The current content and the new content would be inside the body of the request. In case of get/delete property by id - the proprty name and current property value would be in the body eather
   router
     .route("/")
@@ -21,3 +25,5 @@ exports.routers = (collectionName, router) => {
     .delete(CRUDFunctions, deleteDocumentByProperty(collectionName))
     .patch(CRUDFunctions.edditDocumentByProperty(collectionName));
 };
+
+module.exports = router;
